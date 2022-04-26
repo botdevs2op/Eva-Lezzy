@@ -485,7 +485,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         try:
             buttons = [
                     [
-                        InlineKeyboardButton('Series', url=f"https://t.me/{AUTH_CHANNEL}?start={ident}_{file_id}"),
+                        InlineKeyboardButton('Series', url=f"tg://openmessage?user_id={temp.ME}{file_id}"),
                         InlineKeyboardButton('Movies', url='https://t.me/nasrani_update'),
                     ]
                     ]
