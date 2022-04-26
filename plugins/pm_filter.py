@@ -1361,7 +1361,7 @@ async def advantage_spell_chok(msg):
         parse_mode="html",
         reply_markup=InlineKeyboardMarkup(btn))
 
-    await asyncio.sleep(30)
+    await asyncio.sleep(60)
     await k.delete()                
     return k
                 
