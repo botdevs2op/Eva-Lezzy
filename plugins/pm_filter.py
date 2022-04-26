@@ -195,9 +195,23 @@ async def advantage_spoll_choker(bot, query):
             k = await query.message.edit_text(
             text="▣▣▣▣▣▣"
         )
-            k = await query.message.edit('😄നിങ്ങളുടെ മൂവീസ് ഉടനെ ആഡ് ചെയ്യുന്നതാണ്.@nasrani_update_join @munnipopz')
+            k = await query.message.edit_text(
+            text=f"<b>ഹേയ് ബ്രോ,,,DvD ഇറങ്ങിയ സിനിമയാണെങ്കിൽ 24 മണിക്കൂറിനുള്ളിൽ ആഡ് ചെയ്യുന്നതായിരിക്കും</b>",
+            
+            reply_markup=InlineKeyboardMarkup(
+                            [
+                                [
+                                    InlineKeyboardButton('🎁𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬🎁', url="http://t.me/nasrani_bot?startgroup=true")
+                                ],
+                                [
+                                    InlineKeyboardButton('🧩𝐆𝐨𝐨𝐠𝐥𝐞🧩', url=f"google.com/search?q={query.replace(' ','+')}"),
+                                    InlineKeyboardButton('☘𝐈𝐦𝐝𝐛☘', url="https://imdb.com")
+                                ]                            
+                            ]
+                        )
+                    )         
         
-        
+
 
 
 @Client.on_callback_query()
