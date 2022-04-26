@@ -206,7 +206,7 @@ async def advantage_spoll_choker(bot, query):
                                 ],
                                 [
                                     InlineKeyboardButton('🧩𝐆𝐨𝐨𝐠𝐥𝐞🧩', url=f"google.com"),
-                                    InlineKeyboardButton('☘𝐈𝐦𝐝𝐛☘', url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
+                                    InlineKeyboardButton('☘𝐈𝐦𝐝𝐛☘', url=f"https://imdb.com")
                                 ]                            
                             ]
                         )
@@ -485,7 +485,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         try:
             buttons = [
                     [
-                        InlineKeyboardButton('Series', url='https://t.me/NasraniSeries'),
+                        InlineKeyboardButton('Series', callback_data=f"{pre}#{file_id}")]),
                         InlineKeyboardButton('Movies', url='https://t.me/nasrani_update'),
                     ]
                     ]
