@@ -499,24 +499,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     
             )
 
-            buttons = [
-                    [
-                        InlineKeyboardButton('Series', url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}"),
-                        InlineKeyboardButton('Movies', url='https://t.me/nasrani_update'),
-                    ]
-                    ]
-            fmsg = await query.message.reply_text(
-                chat_id=AUTH_CHANNEL,          
-                text=f'<b> 𝐇𝐞𝐲 👋 {query.from_user.mention} </b>😍\n ഈ ഫയൽ 5മിനുട്ട് കൊണ്ട് ഡിലീറ്റ് ആകും </b>\n',
-                
-                protect_content=True if ident == "filep" else False,
-                reply_markup=InlineKeyboardMarkup(buttons)
-                    
-            )
-
-
-
-
+            
             msg1 = await query.message.reply(
                 f'<b> 𝐇𝐞𝐲 👋 {query.from_user.mention} </b>😍\n\n<b>📫 Your File is Ready</b>\n\n'           
                 f'<b>📂 Mᴏᴠɪᴇ Nᴀᴍᴇ</b> : <code>{title}</code>\n\n'              
