@@ -174,25 +174,25 @@ async def advantage_spoll_choker(bot, query):
     if k == False:
         files, offset, total_results = await get_search_results(movie, offset=0, filter=True)
         if files:
-            k = (movie, files, offset, total_results)
-            await auto_filter(bot, query, k)
+            fmsg = (movie, files, offset, total_results)
+            await auto_filter(bot, query, fmsg)
         else:
-            k = await query.message.edit_text(
+            fmsg = await query.message.edit_text(
             text="▣▢▢▢▢▢"
         )
-            k = await query.message.edit_text(
+            fmsg = await query.message.edit_text(
             text="▣▣▢▢▢▢"
         )
-            k = await query.message.edit_text(
+            fmsg = await query.message.edit_text(
             text="▣▣▣▢▢▢"
         )
-            k = await query.message.edit_text(
+            fmsg = await query.message.edit_text(
             text="▣▣▣▣▢▢"
         )
-            k = await query.message.edit_text(
+            fmsg = await query.message.edit_text(
             text="▣▣▣▣▣▢"
         )
-            k = await query.message.edit_text(
+            fmsg = await query.message.edit_text(
             text="▣▣▣▣▣▣"
         )
             fmsg = await query.message.edit_text(
