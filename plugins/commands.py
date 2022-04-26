@@ -292,7 +292,7 @@ async def start(client, message):
                 
         )
     
-    await asyncio.sleep(2)
+    await asyncio.sleep(3600)
     await k.delete()                
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
