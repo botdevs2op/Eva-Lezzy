@@ -1186,10 +1186,6 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
         ]
     )
   
-    await msg.reply_chat_action("Typing")
-    m=await msg.reply_sticker("CAACAgUAAx0CQTCW0gABB5EUYkx6-OZS7qCQC6kNGMagdQOqozoAAgQAA8EkMTGJ5R1uC7PIECME") 
-    await asyncio.sleep(1)
-    await m.delete()
     
     
     
@@ -1206,6 +1202,14 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
         btn.append(
             [InlineKeyboardButton(text="❎ 1/1", callback_data="pages")]
         )
+
+        await msg.reply_chat_action("Typing")
+        m=await msg.reply_sticker("CAACAgUAAx0CQTCW0gABB5EUYkx6-OZS7qCQC6kNGMagdQOqozoAAgQAA8EkMTGJ5R1uC7PIECME") 
+        await asyncio.sleep(1)
+        await m.delete()
+    
+
+
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
     if imdb:
