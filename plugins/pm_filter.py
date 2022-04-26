@@ -196,7 +196,7 @@ async def advantage_spoll_choker(bot, query):
             text="▣▣▣▣▣▣"
         )
             await query.message.reply_text(
-            text=f"🥰🥰🥰 waiting..",
+            text=f" {message.from_user.mention} നിങ്ങളുടെ {search} dvd വന്നിട്ടുണ്ടെങ്കിൽ 24 മണിക്കൂറിനുള്ളിൽ ആഡ് ചെയ്യും..",
         
             reply_markup=InlineKeyboardMarkup(
                             [
@@ -204,7 +204,7 @@ async def advantage_spoll_choker(bot, query):
                                     InlineKeyboardButton('🎁𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬🎁', url="http://t.me/nasrani_bot?startgroup=true")
                                 ],
                                 [
-                                    InlineKeyboardButton('🧩𝐆𝐨𝐨𝐠𝐥𝐞🧩', url="https://google.com"),
+                                    InlineKeyboardButton('🧩𝐆𝐨𝐨𝐠𝐥𝐞🧩', url="https://google.com/search?q={query.replace(' ','+')}"),
                                     InlineKeyboardButton('☘𝐈𝐦𝐝𝐛☘', url="https://imdb.com")
                                 ]                            
                             ]
