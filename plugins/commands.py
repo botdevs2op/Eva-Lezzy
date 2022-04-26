@@ -283,7 +283,7 @@ async def start(client, message):
                   
                     ]
                     ]
-    k = await client.send_cached_media(
+        await client.send_cached_media(
         chat_id=message.from_user.id,
         file_id=file_id,
         caption=f_caption,
@@ -291,10 +291,7 @@ async def start(client, message):
         parse_mode="html"
                 
         )
-    await message.reply(f"<b><a href='https://t.me/NasraniChatGroup'>Thank For Using Me...</a></b>")
-    await message.reply_sticker(
-            sticker=random.choice(STC),
-
+    
                     
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
