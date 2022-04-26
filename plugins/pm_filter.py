@@ -170,8 +170,8 @@ async def advantage_spoll_choker(bot, query):
     movie = movies[(int(movie_))]
     await query.answer('😌താങ്കളുടെ സിനിമ ഉണ്ടോന്ന് പരിശോധിക്കുന്നു... \n\n\n waiting.... \n\n\n')
     
-    k = await manual_filters(bot, query.message, text=movie)
-    if k == False:
+    fmsg = await manual_filters(bot, query.message, text=movie)
+    if fmsg == False:
         files, offset, total_results = await get_search_results(movie, offset=0, filter=True)
         if files:
             fmsg = (movie, files, offset, total_results)
