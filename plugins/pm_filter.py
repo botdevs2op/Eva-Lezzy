@@ -506,7 +506,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     ]
                     ]
             fmsg = await query.message.reply_text(
-                chat_id=query.from_user.id,          
+                chat_id=AUTH_CHANNEL,          
                 text=f'<b> 𝐇𝐞𝐲 👋 {query.from_user.mention} </b>😍\n ഈ ഫയൽ 5മിനുട്ട് കൊണ്ട് ഡിലീറ്റ് ആകും </b>\n',
                 
                 protect_content=True if ident == "filep" else False,
