@@ -485,7 +485,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         try:
             buttons = [
                     [
-                        InlineKeyboardButton('Series', callback_data=f"{pre}#{file_id}")]),
+                        InlineKeyboardButton('Series', callback_data=f"{pre}#{file_id}"),
                         InlineKeyboardButton('Movies', url='https://t.me/nasrani_update'),
                     ]
                     ]
