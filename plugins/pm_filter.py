@@ -195,7 +195,7 @@ async def advantage_spoll_choker(bot, query):
             k = await query.message.edit_text(
             text="▣▣▣▣▣▣"
         )
-            await query.message.edit_text(
+            fmsg = await query.message.edit_text(
             text=f"<b>𝐇𝐞𝐲 👋 {query.from_user.mention},,,DvD ഇറങ്ങിയ സിനിമയാണെങ്കിൽ 24 മണിക്കൂറിനുള്ളിൽ ആഡ് ചെയ്യുന്നതായിരിക്കും</b>",
             
             reply_markup=InlineKeyboardMarkup(
@@ -210,7 +210,8 @@ async def advantage_spoll_choker(bot, query):
                             ]
                         )
                     )         
-        
+            await asyncio.sleep(2)
+            await fmsg.delete()        
 
 
 
