@@ -170,32 +170,32 @@ async def advantage_spoll_choker(bot, query):
     movie = movies[(int(movie_))]
     await query.answer('😌താങ്കളുടെ സിനിമ ഉണ്ടോന്ന് പരിശോധിക്കുന്നു... \n\n\n waiting.... \n\n\n')
     
-    fmsg = await manual_filters(bot, query.message, text=movie)
-    if fmsg == False:
+    k = await manual_filters(bot, query.message, text=movie)
+    if k == False:
         files, offset, total_results = await get_search_results(movie, offset=0, filter=True)
         if files:
-            fmsg = (movie, files, offset, total_results)
-            await auto_filter(bot, query, fmsg)
+            k = (movie, files, offset, total_results)
+            await auto_filter(bot, query, k)
         else:
-            fmsg = await query.message.edit_text(
+            k = await query.message.edit_text(
             text="▣▢▢▢▢▢"
         )
-            fmsg = await query.message.edit_text(
+            k = await query.message.edit_text(
             text="▣▣▢▢▢▢"
         )
-            fmsg = await query.message.edit_text(
+            k = await query.message.edit_text(
             text="▣▣▣▢▢▢"
         )
-            fmsg = await query.message.edit_text(
+            k = await query.message.edit_text(
             text="▣▣▣▣▢▢"
         )
-            fmsg = await query.message.edit_text(
+            k = await query.message.edit_text(
             text="▣▣▣▣▣▢"
         )
-            fmsg = await query.message.edit_text(
+            k = await query.message.edit_text(
             text="▣▣▣▣▣▣"
         )
-            fmsg = await query.message.edit_text(
+            k = await query.message.edit_text(
             text=f"<b>𝐇𝐞𝐲 👋 {query.from_user.mention},,,DvD ഇറങ്ങിയ സിനിമയാണെങ്കിൽ 24 മണിക്കൂറിനുള്ളിൽ ആഡ് ചെയ്യുന്നതായിരിക്കും</b>",
             
             reply_markup=InlineKeyboardMarkup(
@@ -211,7 +211,7 @@ async def advantage_spoll_choker(bot, query):
                         )
                     )         
             await asyncio.sleep(1000000)
-            await fmsg.delete()        
+            await k.delete()        
 
 
 
