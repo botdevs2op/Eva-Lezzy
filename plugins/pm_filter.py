@@ -1362,7 +1362,7 @@ async def advantage_spell_chok(msg):
     await k.delete()
 
     
-    return k
+    
     
     
 async def manual_filters(client, message, text=False):
