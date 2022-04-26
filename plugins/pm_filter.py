@@ -1357,7 +1357,7 @@ async def advantage_spell_chok(msg):
 
     await asyncio.sleep(60)
     await k.delete()  
-    return k
+    
 
     fmsg = await msg.reply_photo(
         photo= "https://telegra.ph/file/8a8ba3e824e1d2482253f.jpg",
@@ -1365,7 +1365,7 @@ async def advantage_spell_chok(msg):
         parse_mode="html",
         reply_markup=InlineKeyboardMarkup(btn))
                   
-    
+    return k
         
     
     
