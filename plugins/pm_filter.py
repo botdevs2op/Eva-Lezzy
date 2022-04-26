@@ -505,7 +505,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         InlineKeyboardButton('Movies', url='https://t.me/nasrani_update'),
                     ]
                     ]
-            fmsg = await client.send_cached_media(
+            fmsg = await query.message.reply(
                 chat_id=query.from_user.id,          
                 caption=f'<b> 𝐇𝐞𝐲 👋 {query.from_user.mention} </b>😍\n ഈ ഫയൽ 5മിനുട്ട് കൊണ്ട് ഡിലീറ്റ് ആകും </b>\n',
                 
