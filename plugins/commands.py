@@ -283,7 +283,7 @@ async def start(client, message):
                   
                     ]
                     ]
-    await client.send_cached_media(
+   k = await client.send_cached_media(
         chat_id=message.from_user.id,
         file_id=file_id,
         caption=f_caption,
@@ -292,7 +292,8 @@ async def start(client, message):
                 
         )
     
-                    
+    await asyncio.sleep(2)
+    await k.delete()                
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
 async def channel_info(bot, message):
