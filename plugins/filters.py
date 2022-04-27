@@ -109,9 +109,8 @@ async def addfilter(client, message):
     else:
         return
 
-        k = await add_filter(grp_id, text, reply_text, btn, fileid, alert)
-        await asyncio.sleep(3)
-        await k.delete()
+        await add_filter(grp_id, text, reply_text, btn, fileid, alert)
+    
 
 
     k = await message.reply_text(
@@ -275,4 +274,3 @@ async def delallconfirm(client, message):
             ]),
             quote=True
         )
-
