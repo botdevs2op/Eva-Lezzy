@@ -96,20 +96,7 @@ async def reply_text(client: Client, message):
                 pass
             await client.send_message(
                 text=message.text,
-                chat_id=int(reference_id),
-                reply_markup=InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton(f'ɪɴғᴏ', 'infos')
-                        ],
-                        [
-                            InlineKeyboardButton("⚠️ Can't Access ❓ Click Here ⚠️", url=f'https://t.me/+Md9dwytUK1NhNTc9')
-                        ],                       
-                        [
-                            InlineKeyboardButton('📥 Download 📥 ', url = "https://t.me/NasraniMovies")
-                        ]
-                    ]
-                )
+                chat_id=int(reference_id)
             )
     except Exception as e:
         logger.exception(e)
@@ -133,20 +120,7 @@ async def replay_media(client: Client, message):
                 chat_id=int(reference_id),
                 from_chat_id=message.chat.id,
                 message_id=message.message_id,
-                parse_mode="html",
-                reply_markup=InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton(f'ɪɴғᴏ', 'infos')
-                        ],
-                        [
-                            InlineKeyboardButton("⚠️ Can't Access ❓ Click Here ⚠️", url=f'https://t.me/+Md9dwytUK1NhNTc9')
-                        ],                       
-                        [
-                            InlineKeyboardButton('📥 Download 📥 ', url = "https://t.me/NasraniMovies")
-                        ]
-                    ]
-                )
+                parse_mode="html"
             )
     except Exception as e:
         logger.exception(e)
