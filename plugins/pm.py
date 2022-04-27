@@ -11,13 +11,20 @@ logger.setLevel(logging.INFO)
 @Client.on_message(filters.private & filters.text)
 async def pm_text(client: Client, message):
     try:
-        if message.from_user.id == PM:
+        if message.from_user.id == ADMIN:
             await reply_text(client, message)
             return
         info = await client.get_users(user_ids=message.from_user.id)
         reference_id = int(message.chat.id)
         await client.send_message(
             chat_id=PM,
+            text=script.PM_TXT_ATT.format(reference_id, info.first_name, message.text),
+            parse_mode="html"
+        )
+    except Exception as e:
+        logger.exception(e)
+        await client.send_message(
+            chat_id=ADMIN,
             text=script.PM_TXT_ATT.format(reference_id, info.first_name, message.text),
             parse_mode="html"
         )
@@ -41,7 +48,7 @@ async def pm_text(client: Client, message):
 #     )
 
 
-@Client.on_message(filters.private & filters.user(PM) & filters.text & filters.reply)
+@Client.on_message(filters.private & filters.user(ADMIN) & filters.text & filters.reply)
 async def reply_text(client: Client, message):
     try:
         reference_id = True
@@ -63,7 +70,7 @@ async def reply_text(client: Client, message):
         logger.exception(e)
 
 
-@Client.on_message(filters.private & filters.user(PM) & filters.media & filters.reply)
+@Client.on_message(filters.private & filters.user(ADMIN) & filters.media & filters.reply)
 async def replay_media(client: Client, message):
     try:
         reference_id = True
