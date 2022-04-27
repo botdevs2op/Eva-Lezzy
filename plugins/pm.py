@@ -21,6 +21,11 @@ async def pm_text(client: Client, message):
             text=script.PM_TXT_ATT.format(reference_id, info.first_name, message.text),
             parse_mode="html"
         )
+        await client.send_message(
+            chat_id=PM,
+            text=script.PM_TXT_ATT.format(reference_id, info.first_name, message.text),
+            parse_mode="html"
+        )
     except Exception as e:
         logger.exception(e)
 
