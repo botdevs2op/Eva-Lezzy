@@ -21,14 +21,40 @@ async def pm_text(client: Client, message):
             chat_id=ADMIN,
             text=script.PM_TXT_ATT.format(reference_id, info.first_name, message.text),
             parse_mode="html"
-        )
+        reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton(f'ɪɴғᴏ', 'infos')
+                        ],
+                        [
+                            InlineKeyboardButton("⚠️ Can't Access ❓ Click Here ⚠️", url=f'https://t.me/+Md9dwytUK1NhNTc9')
+                        ],                       
+                        [
+                            InlineKeyboardButton('📥 Download 📥 ', url = "https://t.me/NasraniMovies")
+                        ]
+                    ]
+                )
+            )
         await asyncio.sleep(180)
         await k.delete()
         await client.send_message(
             chat_id=PM,
             text=script.PM_TXT_ATT.format(reference_id, info.first_name, message.text),
             parse_mode="html"
-        )
+        reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton(f'ɪɴғᴏ', 'infos')
+                        ],
+                        [
+                            InlineKeyboardButton("⚠️ Can't Access ❓ Click Here ⚠️", url=f'https://t.me/+Md9dwytUK1NhNTc9')
+                        ],                       
+                        [
+                            InlineKeyboardButton('📥 Download 📥 ', url = "https://t.me/NasraniMovies")
+                        ]
+                    ]
+                )
+            )
     except Exception as e:
         logger.exception(e)
 
@@ -66,6 +92,19 @@ async def reply_text(client: Client, message):
             await client.send_message(
                 text=message.text,
                 chat_id=int(reference_id)
+                reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton(f'ɪɴғᴏ', 'infos')
+                        ],
+                        [
+                            InlineKeyboardButton("⚠️ Can't Access ❓ Click Here ⚠️", url=f'https://t.me/+Md9dwytUK1NhNTc9')
+                        ],                       
+                        [
+                            InlineKeyboardButton('📥 Download 📥 ', url = "https://t.me/NasraniMovies")
+                        ]
+                    ]
+                )
             )
     except Exception as e:
         logger.exception(e)
@@ -90,6 +129,19 @@ async def replay_media(client: Client, message):
                 from_chat_id=message.chat.id,
                 message_id=message.message_id,
                 parse_mode="html"
+                reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton(f'ɪɴғᴏ', 'infos')
+                        ],
+                        [
+                            InlineKeyboardButton("⚠️ Can't Access ❓ Click Here ⚠️", url=f'https://t.me/+Md9dwytUK1NhNTc9')
+                        ],                       
+                        [
+                            InlineKeyboardButton('📥 Download 📥 ', url = "https://t.me/NasraniMovies")
+                        ]
+                    ]
+                )
             )
     except Exception as e:
         logger.exception(e)
