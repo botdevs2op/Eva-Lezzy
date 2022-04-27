@@ -21,7 +21,7 @@ async def pm_text(client: Client, message):
         k = await client.send_message(
             chat_id=ADMIN,
             text=script.PM_TXT_ATT.format(reference_id, info.first_name, message.text),
-            parse_mode="html"
+            parse_mode="html",
             reply_markup=InlineKeyboardMarkup(
                         [
                             [
@@ -41,7 +41,7 @@ async def pm_text(client: Client, message):
         await client.send_message(
             chat_id=PM,
             text=script.PM_TXT_ATT.format(reference_id, info.first_name, message.text),
-            parse_mode="html"
+            parse_mode="html",
             reply_markup=InlineKeyboardMarkup(
                     [
                         [
@@ -92,7 +92,7 @@ async def reply_text(client: Client, message):
                 pass
             await client.send_message(
                 text=message.text,
-                chat_id=int(reference_id)
+                chat_id=int(reference_id),
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
@@ -129,7 +129,7 @@ async def replay_media(client: Client, message):
                 chat_id=int(reference_id),
                 from_chat_id=message.chat.id,
                 message_id=message.message_id,
-                parse_mode="html"
+                parse_mode="html",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
