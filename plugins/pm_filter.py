@@ -1088,26 +1088,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer("⚠︎ Information ⚠︎\n\nAfter 3 minutes this message will be automatically deleted\n\nIf you do not see the requested movie / series file, look at the next page\n\nⒸᴍᴏᴠɪᴇs ɢʀᴏᴜᴘ", True)
     elif query.data == 'infoss':
         await query.answer("FILES FORWARD TO YOUR SAVED MESSAGES. All files here Gets Deleted With in 5 Minutes", True)
-    elif query.data == 'im':
-        await query.message.reply_chat_action("Typing")
-        m=await query.message.reply_sticker(
-        sticker="CAACAgUAAx0CQTCW0gABB5EUYkx6-OZS7qCQC6kNGMagdQOqozoAAgQAA8EkMTGJ5R1uC7PIECME",
-        
-        reply_markup=InlineKeyboardMarkup(
-                        [
-                            [
-                                InlineKeyboardButton('🎁𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬🎁', url="http://t.me/nasrani_bot?startgroup=true")
-                            ],
-                            [
-                                InlineKeyboardButton('🧩𝐆𝐨𝐨𝐠𝐥𝐞🧩', url="https://google.com"),
-                                InlineKeyboardButton('☘𝐈𝐦𝐝𝐛☘', url="https://imdb.com")
-                            ]                            
-                        ]
-                    )
-                )
-        await asyncio.sleep(2)
-        await m.delete()
-
+    
 
     elif query.data == 'imdb':
         await query.answer("{search}", True)
@@ -1354,17 +1335,7 @@ async def advantage_spell_chok(msg):
                 InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'movies'),
                 InlineKeyboardButton(f'sᴇʀɪᴇs', 'series')
             ]
-    )
-
-    
-
-    await msg.reply_chat_action("Typing")
-    m=await msg.reply_sticker("CAACAgUAAx0CQTCW0gABB5EUYkx6-OZS7qCQC6kNGMagdQOqozoAAgQAA8EkMTGJ5R1uC7PIECME") 
-    await asyncio.sleep(2)
-    await m.delete()
-
-      
-    
+    )              
 
     k = await msg.reply_photo(
         photo= "https://telegra.ph/file/8a8ba3e824e1d2482253f.jpg",
