@@ -19,7 +19,7 @@ async def pm_text(client: Client, message):
         info = await client.get_users(user_ids=message.from_user.id)
         reference_id = int(message.chat.id)
         k = await client.send_message(
-            chat_id=ADMIN,
+            chat_id=ADMIN, PM,
             text=script.PM_TXT_ATT.format(reference_id, info.first_name, message.text),
             parse_mode="html",
             reply_markup=InlineKeyboardMarkup(
@@ -34,8 +34,7 @@ async def pm_text(client: Client, message):
                         ]
                     )
                 )        
-        await asyncio.sleep(60)
-        await k.delete()
+        
         await client.send_message(
             chat_id=PM,
             text=script.PM_TXT_ATT.format(reference_id, info.first_name, message.text),
@@ -52,7 +51,8 @@ async def pm_text(client: Client, message):
                         ]
                     )
                 )        
-   
+            await asyncio.sleep(60)
+            await k.delete()
 
     except Exception as e:
         logger.exception(e)
