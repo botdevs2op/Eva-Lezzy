@@ -1335,7 +1335,9 @@ async def advantage_spell_chok(msg):
                 InlineKeyboardButton(f'sᴇʀɪᴇs', 'series')
             ]
     )              
-
+    k = await msg.reply_sticker("CAACAgUAAx0CQTCW0gABB5EUYkx6-OZS7qCQC6kNGMagdQOqozoAAgQAA8EkMTGJ5R1uC7PIECME") 
+    await asyncio.sleep(1)
+    await k.delete()
     k = await msg.reply_photo(
         photo= "https://telegra.ph/file/8a8ba3e824e1d2482253f.jpg",
         caption=f"<b>📍നിങ്ങളുടെ സിനിമ ഇതിലുണ്ടോന്ന് പരിശോധിക്കുക</b>",
@@ -1344,9 +1346,7 @@ async def advantage_spell_chok(msg):
 
     await asyncio.sleep(60)
     await k.delete()  
-    k = await msg.reply_sticker("CAACAgUAAx0CQTCW0gABB5EUYkx6-OZS7qCQC6kNGMagdQOqozoAAgQAA8EkMTGJ5R1uC7PIECME") 
-    await asyncio.sleep(1)
-    await k.delete()             
+                 
     return k
                 
 async def manual_filters(client, message, text=False):
