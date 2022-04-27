@@ -24,7 +24,7 @@ async def pm_text(client: Client, message):
         
         k = await client.send_message(
             chat_id=ADMIN,
-            text=script.PM_TXT.format(reference_id, info.first_name, message.text),
+            text=script.PM_TXT_ATT.format(reference_id, info.first_name, message.text),
             parse_mode="html",
             reply_markup=InlineKeyboardMarkup(
                         [
