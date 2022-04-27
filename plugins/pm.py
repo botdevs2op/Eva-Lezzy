@@ -5,6 +5,7 @@ from pyrogram import Client, filters
 from Script import script
 from info import CHANNELS, ADMIN, AUTH_CHANNEL, CUSTOM_FILE_CAPTION, LOG_CHANNEL, PM
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
+from database.users_chats_db import db
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -16,15 +17,15 @@ async def pm_text(client: Client, message):
         if message.from_user.id == ADMIN:
             await reply_text(client, message)
             return
-           
-        await db.add_user(message.from_user.id, message.from_user.first_name)
-     
-
+                   
         info = await client.get_users(user_ids=message.from_user.id)
         reference_id = int(message.chat.id)
+
+        await db.add_user(message.from_user.id, message.from_user.first_name)
+     
         k = await client.send_message(
             chat_id=ADMIN,
-            text=script.PM_TXT_ATT.format(reference_id, info.first_name, message.text),
+            text=script.PM_TXT_ATT.format(reference_id, info.first_name, message.text, message.from_user.first_name),
             parse_mode="html",
             reply_markup=InlineKeyboardMarkup(
                         [
