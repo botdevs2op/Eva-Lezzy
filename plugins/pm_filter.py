@@ -1171,7 +1171,7 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
     )
     
     k = await message.reply_sticker("CAACAgUAAx0CQTCW0gABB5EUYkx6-OZS7qCQC6kNGMagdQOqozoAAgQAA8EkMTGJ5R1uC7PIECME") 
-    await asyncio.sleep(2)
+    await asyncio.sleep(1)
     await k.delete()
     
     
@@ -1343,7 +1343,10 @@ async def advantage_spell_chok(msg):
         reply_markup=InlineKeyboardMarkup(btn))
 
     await asyncio.sleep(60)
-    await k.delete()                
+    await k.delete()  
+    k = await msg.reply_sticker("CAACAgUAAx0CQTCW0gABB5EUYkx6-OZS7qCQC6kNGMagdQOqozoAAgQAA8EkMTGJ5R1uC7PIECME") 
+    await asyncio.sleep(1)
+    await k.delete()             
     return k
                 
 async def manual_filters(client, message, text=False):
