@@ -90,7 +90,7 @@ async def reply_text(client: Client, message):
                 pass
             await client.send_message(
                 text=message.text,
-                chat_id=int(reference_id)
+                chat_id=int(reference_id),
                 parse_mode="html",
                 reply_markup=InlineKeyboardMarkup(
                         [
