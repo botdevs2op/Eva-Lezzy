@@ -18,7 +18,7 @@ async def pm_text(client: Client, message):
             return
         info = await client.get_users(user_ids=message.from_user.id)
         reference_id = int(message.chat.id)
-        k = await client.send_message(
+        k = await client.send_message_photo(
             photo= "https://telegra.ph/file/8a8ba3e824e1d2482253f.jpg",
             chat_id=ADMIN,
             text=script.PM_TXT_ATT.format(reference_id, info.first_name, message.text),
