@@ -4,6 +4,7 @@ import logging
 from pyrogram import Client, filters
 from Script import script
 from info import CHANNELS, ADMIN, AUTH_CHANNEL, CUSTOM_FILE_CAPTION, LOG_CHANNEL, PM
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
