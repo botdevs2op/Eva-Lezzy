@@ -23,19 +23,19 @@ async def pm_text(client: Client, message):
             text=script.PM_TXT_ATT.format(reference_id, info.first_name, message.text),
             parse_mode="html"
             reply_markup=InlineKeyboardMarkup(
-                    [
                         [
-                            InlineKeyboardButton(f'ɪɴғᴏ', 'infos')
-                        ],
-                        [
-                            InlineKeyboardButton("⚠️ Can't Access ❓ Click Here ⚠️", url=f'https://t.me/+Md9dwytUK1NhNTc9')
-                        ],                       
-                        [
-                            InlineKeyboardButton('📥 Download 📥 ', url = "https://t.me/NasraniMovies")
+                            [
+                                InlineKeyboardButton(f'ɪɴғᴏ', 'infos')
+                            ],
+                            [
+                                InlineKeyboardButton("⚠️ Can't Access ❓ Click Here ⚠️", url=f'https://t.me/+Md9dwytUK1NhNTc9')
+                            ],                       
+                            [
+                                InlineKeyboardButton('📥 Download 📥 ', url = "https://t.me/NasraniMovies")
+                            ]
                         ]
-                    ]
+                    )
                 )
-            )
         await asyncio.sleep(180)
         await k.delete()
         await client.send_message(
