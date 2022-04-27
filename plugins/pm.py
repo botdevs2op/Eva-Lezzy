@@ -22,7 +22,7 @@ async def pm_text(client: Client, message):
             text=script.PM_TXT_ATT.format(reference_id, info.first_name, message.text),
             parse_mode="html"
         )
-        await asyncio.sleep(5)
+        await asyncio.sleep(180)
         await k.delete()
         await client.send_message(
             chat_id=PM,
