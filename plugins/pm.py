@@ -2,7 +2,7 @@ import os
 import logging
 from pyrogram import Client, filters
 from Script import script
-from info import CHANNELS, ADMIN, AUTH_CHANNEL, CUSTOM_FILE_CAPTION, LOG_CHANNEL
+from info import CHANNELS, ADMIN, AUTH_CHANNEL, CUSTOM_FILE_CAPTION, LOG_CHANNEL, PM
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
