@@ -16,6 +16,10 @@ async def pm_text(client: Client, message):
         if message.from_user.id == ADMIN:
             await reply_text(client, message)
             return
+           
+        await db.add_user(message.from_user.id, message.from_user.first_name)
+     
+
         info = await client.get_users(user_ids=message.from_user.id)
         reference_id = int(message.chat.id)
         k = await client.send_message(
