@@ -50,7 +50,7 @@ async def pm_text(client: Client, message):
      
         k = await client.send_message(
             chat_id=ADMIN,
-            text=script.START_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME),
+            text=script.PM_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME),
             parse_mode="html",
             reply_markup=InlineKeyboardMarkup(
                         [
