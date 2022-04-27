@@ -21,7 +21,7 @@ async def pm_text(client: Client, message):
             chat_id=ADMIN,
             text=script.PM_TXT_ATT.format(reference_id, info.first_name, message.text),
             parse_mode="html"
-        reply_markup=InlineKeyboardMarkup(
+            reply_markup=InlineKeyboardMarkup(
                     [
                         [
                             InlineKeyboardButton(f'ɪɴғᴏ', 'infos')
@@ -41,7 +41,7 @@ async def pm_text(client: Client, message):
             chat_id=PM,
             text=script.PM_TXT_ATT.format(reference_id, info.first_name, message.text),
             parse_mode="html"
-        reply_markup=InlineKeyboardMarkup(
+            reply_markup=InlineKeyboardMarkup(
                     [
                         [
                             InlineKeyboardButton(f'ɪɴғᴏ', 'infos')
