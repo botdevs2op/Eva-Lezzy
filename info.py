@@ -44,6 +44,11 @@ AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_chan
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 my_channel = environ.get('MY_CHANNEL', "")
 MY_CHANNEL = int(my_channel) if my_channel and id_pattern.search(my_channel) else None
+pm = environ.get('PM')
+PM = int(pm) if pm and id_pattern.search(pm) else None
+
+
+
 
 # MongoDB information
 DATABASE_URI = environ.get('DATABASE_URI', "")
