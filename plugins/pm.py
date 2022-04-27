@@ -1,11 +1,8 @@
 import os
-import asyncio
 import logging
 from pyrogram import Client, filters
 from Script import script
 from info import CHANNELS, ADMIN, AUTH_CHANNEL, CUSTOM_FILE_CAPTION, LOG_CHANNEL, PM
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
-
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -17,11 +14,8 @@ async def pm_text(client: Client, message):
         if message.from_user.id == ADMIN:
             await reply_text(client, message)
             return
-                   
         info = await client.get_users(user_ids=message.from_user.id)
         reference_id = int(message.chat.id)
-
-        
         k = await client.send_message(
             chat_id=ADMIN,
             text=script.PM_TXT_ATT.format(reference_id, info.first_name, message.text),
@@ -29,19 +23,17 @@ async def pm_text(client: Client, message):
             reply_markup=InlineKeyboardMarkup(
                         [
                             [
-                                InlineKeyboardButton(f'ɪɴғᴏ', 'infos')
+                                InlineKeyboardButton('🎁𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬🎁', url="http://t.me/nasrani_bot?startgroup=true")
                             ],
                             [
-                                InlineKeyboardButton("⚠️ Can't Access ❓ Click Here ⚠️", url=f'https://t.me/+Md9dwytUK1NhNTc9')
-                            ],                       
-                            [
-                                InlineKeyboardButton('📥 Download 📥 ', url = "https://t.me/NasraniMovies")
-                            ]
+                                InlineKeyboardButton('🧩𝐆𝐨𝐨𝐠𝐥𝐞🧩', url=f"google.com/search?q={query.replace(' ','+')}"),
+                                InlineKeyboardButton('☘𝐈𝐦𝐝𝐛☘', url="https://imdb.com")
+                            ]                            
                         ]
                     )
-                )
-        await asyncio.sleep(180)
-        await k.delete()
+                )        
+            await asyncio.sleep(60)
+            await k.delete()
         await client.send_message(
             chat_id=PM,
             text=script.PM_TXT_ATT.format(reference_id, info.first_name, message.text),
@@ -49,17 +41,17 @@ async def pm_text(client: Client, message):
             reply_markup=InlineKeyboardMarkup(
                         [
                             [
-                                InlineKeyboardButton(f'ɪɴғᴏ', 'infos')
+                                InlineKeyboardButton('🎁𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬🎁', url="http://t.me/nasrani_bot?startgroup=true")
                             ],
                             [
-                                InlineKeyboardButton("⚠️ Can't Access ❓ Click Here ⚠️", url=f'https://t.me/+Md9dwytUK1NhNTc9')
-                            ],                       
-                            [
-                                InlineKeyboardButton('📥 Download 📥 ', url = "https://t.me/NasraniMovies")
-                            ]
+                                InlineKeyboardButton('🧩𝐆𝐨𝐨𝐠𝐥𝐞🧩', url=f"google.com/search?q={query.replace(' ','+')}"),
+                                InlineKeyboardButton('☘𝐈𝐦𝐝𝐛☘', url="https://imdb.com")
+                            ]                            
                         ]
                     )
-                )
+                )        
+   
+
     except Exception as e:
         logger.exception(e)
 
@@ -76,8 +68,8 @@ async def pm_text(client: Client, message):
 #         from_chat_id=message.chat.id,
 #         message_id=message.message_id,
 #         caption=script.PM_MED_ATT.format(reference_id, info.first_name),
-#         
-          
+#         parse_mode="html"
+#     )
 
 
 @Client.on_message(filters.private & filters.user(ADMIN) & filters.text & filters.reply)
@@ -96,22 +88,8 @@ async def reply_text(client: Client, message):
                 pass
             await client.send_message(
                 text=message.text,
-                chat_id=int(reference_id),
-                
-                reply_markup=InlineKeyboardMarkup(
-                            [
-                                [
-                                    InlineKeyboardButton(f'ɪɴғᴏ', 'infos')
-                                ],
-                                [
-                                    InlineKeyboardButton("⚠️ Can't Access ❓ Click Here ⚠️", url=f'https://t.me/+Md9dwytUK1NhNTc9')
-                                ],                       
-                                [
-                                    InlineKeyboardButton('📥 Download 📥 ', url = "https://t.me/NasraniMovies")
-                                ]
-                            ]
-                        )
-                    )
+                chat_id=int(reference_id)
+            )
     except Exception as e:
         logger.exception(e)
 
@@ -136,18 +114,16 @@ async def replay_media(client: Client, message):
                 message_id=message.message_id,
                 parse_mode="html",
                 reply_markup=InlineKeyboardMarkup(
+                        [
                             [
-                                [
-                                    InlineKeyboardButton(f'ɪɴғᴏ', 'infos')
-                                ],
-                                [
-                                    InlineKeyboardButton("⚠️ Can't Access ❓ Click Here ⚠️", url=f'https://t.me/+Md9dwytUK1NhNTc9')
-                                ],                       
-                                [
-                                    InlineKeyboardButton('📥 Download 📥 ', url = "https://t.me/NasraniMovies")
-                                ]
-                            ]
-                        )
+                                InlineKeyboardButton('🎁𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬🎁', url="http://t.me/nasrani_bot?startgroup=true")
+                            ],
+                            [
+                                InlineKeyboardButton('🧩𝐆𝐨𝐨𝐠𝐥𝐞🧩', url=f"google.com/search?q={query.replace(' ','+')}"),
+                                InlineKeyboardButton('☘𝐈𝐦𝐝𝐛☘', url="https://imdb.com")
+                            ]                            
+                        ]
                     )
+                )        
     except Exception as e:
         logger.exception(e)
