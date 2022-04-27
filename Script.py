@@ -10,8 +10,7 @@ class script(object):
    
 
 
-    PM_TXT = """𝗛ᴇʟʟᴏ {},
-𝖢𝗅𝗂𝖼𝗄 <b>𝖧𝖾𝗅𝗉</b> 𝗍𝗈 𝗆𝗒 𝖥𝗎𝗇𝖼𝗍𝗂𝗈𝗇𝗌<a href='https://telegra.ph/file/eaf97e4782f05b667e551.jpg'>.</a>
+    PM_TXT = """<a href='https://telegra.ph/file/eaf97e4782f05b667e551.jpg'>.</a>
 
 <b>Message from:</b> {}\n<b>Name:</b> {}\n\n{}"""  
 
